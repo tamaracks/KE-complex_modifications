@@ -107,7 +107,7 @@
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
-                "^org\\.pqrs\\.unknownapp.conkeror$"
+                "^org\\.pqrs\\.unknownapp\\.conkeror$"
               ]
             }
           ]
@@ -142,7 +142,7 @@
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
-                "^org\\.pqrs\\.unknownapp.conkeror$"
+                "^org\\.pqrs\\.unknownapp\\.conkeror$"
               ]
             }
           ]
@@ -180,7 +180,7 @@
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
-                "^org\\.pqrs\\.unknownapp.conkeror$"
+                "^org\\.pqrs\\.unknownapp\\.conkeror$"
               ]
             }
           ]
@@ -216,7 +216,7 @@
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
-                "^org\\.pqrs\\.unknownapp.conkeror$",
+                "^org\\.pqrs\\.unknownapp\\.conkeror$",
                 "^com\\.vmware\\.fusion$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.vmware\\.view$",
@@ -226,7 +226,8 @@
                 "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                 "^com\\.citrix\\.XenAppViewer$",
                 "^com\\.vmware\\.proxyApp\\.",
-                "^com\\.parallels\\.winapp\\."
+                "^com\\.parallels\\.winapp\\.",
+                "^com\\.utmapp\\.UTM$"
               ]
             }
           ]
@@ -262,7 +263,7 @@
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
-                "^org\\.pqrs\\.unknownapp.conkeror$",
+                "^org\\.pqrs\\.unknownapp\\.conkeror$",
                 "^com\\.vmware\\.fusion$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.vmware\\.view$",
@@ -272,7 +273,8 @@
                 "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                 "^com\\.citrix\\.XenAppViewer$",
                 "^com\\.vmware\\.proxyApp\\.",
-                "^com\\.parallels\\.winapp\\."
+                "^com\\.parallels\\.winapp\\.",
+                "^com\\.utmapp\\.UTM$"
               ]
             }
           ]
@@ -304,7 +306,7 @@
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
-                "^org\\.pqrs\\.unknownapp.conkeror$"
+                "^org\\.pqrs\\.unknownapp\\.conkeror$"
               ]
             }
           ]
@@ -336,7 +338,7 @@
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
-                "^org\\.pqrs\\.unknownapp.conkeror$"
+                "^org\\.pqrs\\.unknownapp\\.conkeror$"
               ]
             }
           ]
@@ -371,7 +373,7 @@
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
-                "^org\\.pqrs\\.unknownapp.conkeror$"
+                "^org\\.pqrs\\.unknownapp\\.conkeror$"
               ]
             }
           ]
@@ -406,7 +408,7 @@
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
-                "^org\\.pqrs\\.unknownapp.conkeror$"
+                "^org\\.pqrs\\.unknownapp\\.conkeror$"
               ]
             }
           ]
@@ -441,7 +443,7 @@
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
-                "^org\\.pqrs\\.unknownapp.conkeror$"
+                "^org\\.pqrs\\.unknownapp\\.conkeror$"
               ]
             }
           ]
