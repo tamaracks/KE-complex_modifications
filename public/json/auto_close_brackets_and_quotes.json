@@ -1,8 +1,5 @@
 {
   "title": "Auto close brackets & quotes",
-  "maintainers": [
-    "harmtemolder"
-  ],
   "rules": [
     {
       "description": "(1/2) Do not auto close brackets & quotes when holding fn",
@@ -33,6 +30,7 @@
                 "com.github.atom",
                 "com.googlecode.iterm2",
                 "com.jetbrains.pycharm",
+                "com.microsoft.VSCode",
                 "com.visualstudio.code.oss"
               ]
             }
@@ -60,6 +58,7 @@
                 "com.github.atom",
                 "com.googlecode.iterm2",
                 "com.jetbrains.pycharm",
+                "com.microsoft.VSCode",
                 "com.visualstudio.code.oss"
               ]
             }
@@ -91,6 +90,7 @@
                 "com.github.atom",
                 "com.googlecode.iterm2",
                 "com.jetbrains.pycharm",
+                "com.microsoft.VSCode",
                 "com.visualstudio.code.oss"
               ]
             }
@@ -118,6 +118,7 @@
                 "com.github.atom",
                 "com.googlecode.iterm2",
                 "com.jetbrains.pycharm",
+                "com.microsoft.VSCode",
                 "com.visualstudio.code.oss"
               ]
             }
@@ -145,6 +146,7 @@
                 "com.github.atom",
                 "com.googlecode.iterm2",
                 "com.jetbrains.pycharm",
+                "com.microsoft.VSCode",
                 "com.visualstudio.code.oss"
               ]
             }
@@ -176,6 +178,7 @@
                 "com.github.atom",
                 "com.googlecode.iterm2",
                 "com.jetbrains.pycharm",
+                "com.microsoft.VSCode",
                 "com.visualstudio.code.oss"
               ]
             }
@@ -207,6 +210,7 @@
                 "com.github.atom",
                 "com.googlecode.iterm2",
                 "com.jetbrains.pycharm",
+                "com.microsoft.VSCode",
                 "com.visualstudio.code.oss"
               ]
             }
@@ -238,6 +242,7 @@
                 "com.github.atom",
                 "com.googlecode.iterm2",
                 "com.jetbrains.pycharm",
+                "com.microsoft.VSCode",
                 "com.visualstudio.code.oss"
               ]
             }
@@ -269,6 +274,7 @@
                 "com.github.atom",
                 "com.googlecode.iterm2",
                 "com.jetbrains.pycharm",
+                "com.microsoft.VSCode",
                 "com.visualstudio.code.oss"
               ]
             }
@@ -313,6 +319,7 @@
                 "com.github.atom",
                 "com.googlecode.iterm2",
                 "com.jetbrains.pycharm",
+                "com.microsoft.VSCode",
                 "com.visualstudio.code.oss"
               ]
             }
@@ -341,6 +348,7 @@
                 "com.github.atom",
                 "com.googlecode.iterm2",
                 "com.jetbrains.pycharm",
+                "com.microsoft.VSCode",
                 "com.visualstudio.code.oss"
               ]
             }
@@ -380,6 +388,7 @@
                 "com.github.atom",
                 "com.googlecode.iterm2",
                 "com.jetbrains.pycharm",
+                "com.microsoft.VSCode",
                 "com.visualstudio.code.oss"
               ]
             }
@@ -408,6 +417,7 @@
                 "com.github.atom",
                 "com.googlecode.iterm2",
                 "com.jetbrains.pycharm",
+                "com.microsoft.VSCode",
                 "com.visualstudio.code.oss"
               ]
             }
@@ -436,6 +446,7 @@
                 "com.github.atom",
                 "com.googlecode.iterm2",
                 "com.jetbrains.pycharm",
+                "com.microsoft.VSCode",
                 "com.visualstudio.code.oss"
               ]
             }
@@ -475,6 +486,7 @@
                 "com.github.atom",
                 "com.googlecode.iterm2",
                 "com.jetbrains.pycharm",
+                "com.microsoft.VSCode",
                 "com.visualstudio.code.oss"
               ]
             }
@@ -515,6 +527,7 @@
                 "com.github.atom",
                 "com.googlecode.iterm2",
                 "com.jetbrains.pycharm",
+                "com.microsoft.VSCode",
                 "com.visualstudio.code.oss"
               ]
             }
@@ -555,6 +568,7 @@
                 "com.github.atom",
                 "com.googlecode.iterm2",
                 "com.jetbrains.pycharm",
+                "com.microsoft.VSCode",
                 "com.visualstudio.code.oss"
               ]
             }
@@ -594,6 +608,7 @@
                 "com.github.atom",
                 "com.googlecode.iterm2",
                 "com.jetbrains.pycharm",
+                "com.microsoft.VSCode",
                 "com.visualstudio.code.oss"
               ]
             }

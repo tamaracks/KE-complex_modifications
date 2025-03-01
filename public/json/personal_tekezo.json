@@ -5,9 +5,37 @@
   ],
   "rules": [
     {
-      "description": "Personal rules (@tekezo) (rev 37)",
-      "available_since": "13.6.0",
+      "description": "Personal rules (@tekezo) (rev 58)",
+      "available_since": "15.2.3",
       "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "fn",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "fn"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "software_function": {
+                "open_application": {
+                  "bundle_identifier": "com.1password.1password"
+                }
+              }
+            }
+          ],
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 250
+          }
+        },
         {
           "type": "basic",
           "from": {
@@ -128,10 +156,10 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "open_bracket",
+            "key_code": "left_command",
             "modifiers": {
               "mandatory": [
-                "option"
+                "left_option"
               ],
               "optional": [
                 "any"
@@ -140,52 +168,72 @@
           },
           "to": [
             {
-              "key_code": "lang2"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "close_bracket",
-            "modifiers": {
-              "mandatory": [
-                "option"
-              ],
-              "optional": [
-                "any"
+              "key_code": "left_command",
+              "modifiers": [
+                "left_option"
               ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "lang1"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "fn",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "fn"
             }
           ],
           "to_if_alone": [
             {
-              "key_code": "grave_accent_and_tilde"
+              "key_code": "lang1"
             }
           ],
           "parameters": {
             "basic.to_if_alone_timeout_milliseconds": 250
           }
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_option",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_option",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "lang2"
+            }
+          ],
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 250
+          }
+        },
+        {
+          "type": "basic",
+          "from": {
+            "pointing_button": "button2",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
         },
         {
           "type": "basic",
@@ -397,15 +445,8 @@
             {
               "set_variable": {
                 "name": "personal_tekezo_enable_mouse_motion_to_scroll",
-                "value": 1
-              }
-            }
-          ],
-          "to_after_key_up": [
-            {
-              "set_variable": {
-                "name": "personal_tekezo_enable_mouse_motion_to_scroll",
-                "value": 0
+                "value": 1,
+                "key_up_value": 0
               }
             }
           ],
@@ -455,80 +496,230 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "1",
+            "key_code": "h",
             "modifiers": {
-              "mandatory": [
-                "left_control"
-              ],
               "optional": [
-                "caps_lock",
-                "shift"
+                "any"
               ]
             }
           },
           "to": [
             {
-              "key_code": "home"
+              "key_code": "left_arrow",
+              "modifiers": [
+                "fn"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "personal_tekezo_enable_mouse_motion_to_scroll",
+              "value": 1
             }
           ]
         },
         {
           "type": "basic",
           "from": {
-            "key_code": "2",
+            "key_code": "j",
             "modifiers": {
-              "mandatory": [
-                "left_control"
-              ],
               "optional": [
-                "caps_lock",
-                "shift"
+                "any"
               ]
             }
           },
           "to": [
             {
-              "key_code": "page_down"
+              "key_code": "down_arrow",
+              "modifiers": [
+                "fn"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "personal_tekezo_enable_mouse_motion_to_scroll",
+              "value": 1
             }
           ]
         },
         {
           "type": "basic",
           "from": {
-            "key_code": "3",
+            "key_code": "k",
             "modifiers": {
-              "mandatory": [
-                "left_control"
-              ],
               "optional": [
-                "caps_lock",
-                "shift"
+                "any"
               ]
             }
           },
           "to": [
             {
-              "key_code": "page_up"
+              "key_code": "up_arrow",
+              "modifiers": [
+                "fn"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "personal_tekezo_enable_mouse_motion_to_scroll",
+              "value": 1
             }
           ]
         },
         {
           "type": "basic",
           "from": {
-            "key_code": "4",
+            "key_code": "l",
             "modifiers": {
-              "mandatory": [
-                "left_control"
-              ],
               "optional": [
-                "caps_lock",
-                "shift"
+                "any"
               ]
             }
           },
           "to": [
             {
-              "key_code": "end"
+              "key_code": "right_arrow",
+              "modifiers": [
+                "fn"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "personal_tekezo_enable_mouse_motion_to_scroll",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "personal_tekezo_mouse_buttons",
+                "value": 1,
+                "key_up_value": 0
+              }
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "semicolon"
+            }
+          ],
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 250
+          }
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "pointing_button": "button1"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "personal_tekezo_mouse_buttons",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "pointing_button": "button3"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "personal_tekezo_mouse_buttons",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "pointing_button": "button2"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "personal_tekezo_mouse_buttons",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "i",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "software_function": {
+                "set_mouse_cursor_position": {
+                  "screen": 0,
+                  "x": "50%",
+                  "y": "50%"
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "personal_tekezo_mouse_buttons",
+              "value": 1
             }
           ]
         },
@@ -575,17 +766,884 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "hyphen",
-            "modifiers": {
-              "mandatory": [
-                "option"
-              ],
-              "optional": [
-                "caps_lock"
-              ]
-            }
+            "key_code": "0"
           },
           "to": [
+            {
+              "key_code": "keypad_0"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "1"
+          },
+          "to": [
+            {
+              "key_code": "keypad_1"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "2"
+          },
+          "to": [
+            {
+              "key_code": "keypad_2"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "3"
+          },
+          "to": [
+            {
+              "key_code": "keypad_3"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "4"
+          },
+          "to": [
+            {
+              "key_code": "keypad_4"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "5"
+          },
+          "to": [
+            {
+              "key_code": "keypad_5"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "6"
+          },
+          "to": [
+            {
+              "key_code": "keypad_6"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "7"
+          },
+          "to": [
+            {
+              "key_code": "keypad_7"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "8"
+          },
+          "to": [
+            {
+              "key_code": "keypad_8"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "9"
+          },
+          "to": [
+            {
+              "key_code": "keypad_9"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "hyphen"
+          },
+          "to": [
+            {
+              "key_code": "keypad_hyphen"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "equal_sign"
+          },
+          "to": [
+            {
+              "key_code": "keypad_equal_sign"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f1"
+          },
+          "to": [
+            {
+              "key_code": "f1"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f2"
+          },
+          "to": [
+            {
+              "key_code": "f2"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f3"
+          },
+          "to": [
+            {
+              "key_code": "f3"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f4"
+          },
+          "to": [
+            {
+              "key_code": "f4"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f5"
+          },
+          "to": [
+            {
+              "key_code": "f5"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f6"
+          },
+          "to": [
+            {
+              "key_code": "f6"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f7"
+          },
+          "to": [
+            {
+              "key_code": "f7"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f8"
+          },
+          "to": [
+            {
+              "key_code": "f8"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f9"
+          },
+          "to": [
+            {
+              "key_code": "f9"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f10"
+          },
+          "to": [
+            {
+              "key_code": "f10"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f11"
+          },
+          "to": [
+            {
+              "key_code": "f11"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f12"
+          },
+          "to": [
+            {
+              "key_code": "f12"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 3141,
+                  "product_id": 29699
+                }
+              ]
+            },
+            {
+              "type": "device_exists_if",
+              "identifiers": [
+                {
+                  "vendor_id": 7847,
+                  "product_id": 2311
+                },
+                {
+                  "vendor_id": 22594,
+                  "product_id": 20065
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "hyphen"
+          },
+          "to_if_alone": [
+            {
+              "key_code": "hyphen"
+            }
+          ],
+          "to_if_held_down": [
+            {
+              "key_code": "hyphen"
+            },
+            {
+              "key_code": "hyphen"
+            },
+            {
+              "key_code": "hyphen"
+            },
+            {
+              "key_code": "hyphen"
+            },
+            {
+              "key_code": "hyphen"
+            },
+            {
+              "key_code": "hyphen"
+            },
+            {
+              "key_code": "hyphen"
+            },
+            {
+              "key_code": "hyphen"
+            },
+            {
+              "key_code": "hyphen"
+            },
+            {
+              "key_code": "hyphen"
+            },
             {
               "key_code": "hyphen"
             },
@@ -617,22 +1675,53 @@
               "key_code": "hyphen",
               "repeat": false
             }
-          ]
+          ],
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 250,
+            "basic.to_if_held_down_threshold_milliseconds": 250
+          }
         },
         {
           "type": "basic",
           "from": {
-            "key_code": "equal_sign",
-            "modifiers": {
-              "mandatory": [
-                "option"
-              ],
-              "optional": [
-                "caps_lock"
-              ]
-            }
+            "key_code": "equal_sign"
           },
-          "to": [
+          "to_if_alone": [
+            {
+              "key_code": "equal_sign"
+            }
+          ],
+          "to_if_held_down": [
+            {
+              "key_code": "equal_sign"
+            },
+            {
+              "key_code": "equal_sign"
+            },
+            {
+              "key_code": "equal_sign"
+            },
+            {
+              "key_code": "equal_sign"
+            },
+            {
+              "key_code": "equal_sign"
+            },
+            {
+              "key_code": "equal_sign"
+            },
+            {
+              "key_code": "equal_sign"
+            },
+            {
+              "key_code": "equal_sign"
+            },
+            {
+              "key_code": "equal_sign"
+            },
+            {
+              "key_code": "equal_sign"
+            },
             {
               "key_code": "equal_sign"
             },
@@ -664,83 +1753,11 @@
               "key_code": "equal_sign",
               "repeat": false
             }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "page_down",
-            "modifiers": {
-              "mandatory": [
-                "fn"
-              ],
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "consumer_key_code": "display_brightness_decrement"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "page_up",
-            "modifiers": {
-              "mandatory": [
-                "fn"
-              ],
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "consumer_key_code": "display_brightness_increment"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "page_down",
-            "modifiers": {
-              "mandatory": [
-
-              ],
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "consumer_key_code": "volume_decrement"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "page_up",
-            "modifiers": {
-              "mandatory": [
-
-              ],
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "consumer_key_code": "volume_increment"
-            }
-          ]
+          ],
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 250,
+            "basic.to_if_held_down_threshold_milliseconds": 250
+          }
         },
         {
           "type": "basic",
@@ -776,6 +1793,9 @@
                 "^com\\.teamviewer\\.TeamViewer$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.2X\\.Client\\.Mac$",
+                "^com\\.OpenText\\.Exceed-TurboX-Client$",
+                "^com\\.realvnc\\.vncviewer$",
+                "^com\\.citrix\\.receiver\\.icaviewer",
                 "^com\\.vmware\\.fusion$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.vmware\\.view$",
@@ -785,7 +1805,8 @@
                 "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                 "^com\\.citrix\\.XenAppViewer$",
                 "^com\\.vmware\\.proxyApp\\.",
-                "^com\\.parallels\\.winapp\\."
+                "^com\\.parallels\\.winapp\\.",
+                "^com\\.utmapp\\.UTM$"
               ]
             }
           ]
@@ -824,6 +1845,9 @@
                 "^com\\.teamviewer\\.TeamViewer$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.2X\\.Client\\.Mac$",
+                "^com\\.OpenText\\.Exceed-TurboX-Client$",
+                "^com\\.realvnc\\.vncviewer$",
+                "^com\\.citrix\\.receiver\\.icaviewer",
                 "^com\\.vmware\\.fusion$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.vmware\\.view$",
@@ -833,7 +1857,8 @@
                 "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                 "^com\\.citrix\\.XenAppViewer$",
                 "^com\\.vmware\\.proxyApp\\.",
-                "^com\\.parallels\\.winapp\\."
+                "^com\\.parallels\\.winapp\\.",
+                "^com\\.utmapp\\.UTM$"
               ]
             }
           ]
@@ -871,6 +1896,9 @@
                 "^com\\.teamviewer\\.TeamViewer$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.2X\\.Client\\.Mac$",
+                "^com\\.OpenText\\.Exceed-TurboX-Client$",
+                "^com\\.realvnc\\.vncviewer$",
+                "^com\\.citrix\\.receiver\\.icaviewer",
                 "^com\\.vmware\\.fusion$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.vmware\\.view$",
@@ -880,7 +1908,8 @@
                 "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                 "^com\\.citrix\\.XenAppViewer$",
                 "^com\\.vmware\\.proxyApp\\.",
-                "^com\\.parallels\\.winapp\\."
+                "^com\\.parallels\\.winapp\\.",
+                "^com\\.utmapp\\.UTM$"
               ]
             }
           ]
@@ -920,6 +1949,9 @@
                 "^com\\.teamviewer\\.TeamViewer$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.2X\\.Client\\.Mac$",
+                "^com\\.OpenText\\.Exceed-TurboX-Client$",
+                "^com\\.realvnc\\.vncviewer$",
+                "^com\\.citrix\\.receiver\\.icaviewer",
                 "^com\\.vmware\\.fusion$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.vmware\\.view$",
@@ -929,7 +1961,8 @@
                 "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                 "^com\\.citrix\\.XenAppViewer$",
                 "^com\\.vmware\\.proxyApp\\.",
-                "^com\\.parallels\\.winapp\\."
+                "^com\\.parallels\\.winapp\\.",
+                "^com\\.utmapp\\.UTM$"
               ]
             }
           ]
@@ -969,6 +2002,9 @@
                 "^com\\.teamviewer\\.TeamViewer$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.2X\\.Client\\.Mac$",
+                "^com\\.OpenText\\.Exceed-TurboX-Client$",
+                "^com\\.realvnc\\.vncviewer$",
+                "^com\\.citrix\\.receiver\\.icaviewer",
                 "^com\\.vmware\\.fusion$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.vmware\\.view$",
@@ -978,7 +2014,8 @@
                 "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                 "^com\\.citrix\\.XenAppViewer$",
                 "^com\\.vmware\\.proxyApp\\.",
-                "^com\\.parallels\\.winapp\\."
+                "^com\\.parallels\\.winapp\\.",
+                "^com\\.utmapp\\.UTM$"
               ]
             }
           ]
@@ -1018,6 +2055,9 @@
                 "^com\\.teamviewer\\.TeamViewer$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.2X\\.Client\\.Mac$",
+                "^com\\.OpenText\\.Exceed-TurboX-Client$",
+                "^com\\.realvnc\\.vncviewer$",
+                "^com\\.citrix\\.receiver\\.icaviewer",
                 "^com\\.vmware\\.fusion$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.vmware\\.view$",
@@ -1027,7 +2067,8 @@
                 "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                 "^com\\.citrix\\.XenAppViewer$",
                 "^com\\.vmware\\.proxyApp\\.",
-                "^com\\.parallels\\.winapp\\."
+                "^com\\.parallels\\.winapp\\.",
+                "^com\\.utmapp\\.UTM$"
               ]
             }
           ]
@@ -1067,6 +2108,9 @@
                 "^com\\.teamviewer\\.TeamViewer$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.2X\\.Client\\.Mac$",
+                "^com\\.OpenText\\.Exceed-TurboX-Client$",
+                "^com\\.realvnc\\.vncviewer$",
+                "^com\\.citrix\\.receiver\\.icaviewer",
                 "^com\\.vmware\\.fusion$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.vmware\\.view$",
@@ -1076,7 +2120,8 @@
                 "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                 "^com\\.citrix\\.XenAppViewer$",
                 "^com\\.vmware\\.proxyApp\\.",
-                "^com\\.parallels\\.winapp\\."
+                "^com\\.parallels\\.winapp\\.",
+                "^com\\.utmapp\\.UTM$"
               ]
             }
           ]
@@ -1115,6 +2160,9 @@
                 "^com\\.teamviewer\\.TeamViewer$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.2X\\.Client\\.Mac$",
+                "^com\\.OpenText\\.Exceed-TurboX-Client$",
+                "^com\\.realvnc\\.vncviewer$",
+                "^com\\.citrix\\.receiver\\.icaviewer",
                 "^com\\.vmware\\.fusion$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.vmware\\.view$",
@@ -1124,7 +2172,8 @@
                 "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                 "^com\\.citrix\\.XenAppViewer$",
                 "^com\\.vmware\\.proxyApp\\.",
-                "^com\\.parallels\\.winapp\\."
+                "^com\\.parallels\\.winapp\\.",
+                "^com\\.utmapp\\.UTM$"
               ]
             }
           ]
@@ -1163,6 +2212,9 @@
                 "^com\\.teamviewer\\.TeamViewer$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.2X\\.Client\\.Mac$",
+                "^com\\.OpenText\\.Exceed-TurboX-Client$",
+                "^com\\.realvnc\\.vncviewer$",
+                "^com\\.citrix\\.receiver\\.icaviewer",
                 "^com\\.vmware\\.fusion$",
                 "^com\\.vmware\\.horizon$",
                 "^com\\.vmware\\.view$",
@@ -1172,7 +2224,8 @@
                 "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                 "^com\\.citrix\\.XenAppViewer$",
                 "^com\\.vmware\\.proxyApp\\.",
-                "^com\\.parallels\\.winapp\\."
+                "^com\\.parallels\\.winapp\\.",
+                "^com\\.utmapp\\.UTM$"
               ]
             }
           ]
@@ -1251,7 +2304,9 @@
                 "^co\\.zeit\\.hyperterm$",
                 "^co\\.zeit\\.hyper$",
                 "^io\\.alacritty$",
-                "^net\\.kovidgoyal\\.kitty$"
+                "^org\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
+                "^com\\.mitchellh\\.ghostty$"
               ]
             }
           ]
@@ -1278,7 +2333,9 @@
                 "^co\\.zeit\\.hyperterm$",
                 "^co\\.zeit\\.hyper$",
                 "^io\\.alacritty$",
-                "^net\\.kovidgoyal\\.kitty$"
+                "^org\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
+                "^com\\.mitchellh\\.ghostty$"
               ]
             }
           ]
@@ -1305,7 +2362,9 @@
                 "^co\\.zeit\\.hyperterm$",
                 "^co\\.zeit\\.hyper$",
                 "^io\\.alacritty$",
-                "^net\\.kovidgoyal\\.kitty$"
+                "^org\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
+                "^com\\.mitchellh\\.ghostty$"
               ]
             }
           ]
@@ -1332,7 +2391,9 @@
                 "^co\\.zeit\\.hyperterm$",
                 "^co\\.zeit\\.hyper$",
                 "^io\\.alacritty$",
-                "^net\\.kovidgoyal\\.kitty$"
+                "^org\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
+                "^com\\.mitchellh\\.ghostty$"
               ]
             }
           ]
@@ -1365,7 +2426,9 @@
                 "^co\\.zeit\\.hyperterm$",
                 "^co\\.zeit\\.hyper$",
                 "^io\\.alacritty$",
-                "^net\\.kovidgoyal\\.kitty$"
+                "^org\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
+                "^com\\.mitchellh\\.ghostty$"
               ]
             }
           ]
@@ -1388,6 +2451,7 @@
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^org\\.mozilla\\.firefox$",
+                "^org\\.mozilla\\.firefoxdeveloperedition$",
                 "^org\\.mozilla\\.nightly$",
                 "^com\\.microsoft\\.Edge",
                 "^com\\.microsoft\\.edgemac",
@@ -1417,6 +2481,7 @@
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^org\\.mozilla\\.firefox$",
+                "^org\\.mozilla\\.firefoxdeveloperedition$",
                 "^org\\.mozilla\\.nightly$",
                 "^com\\.microsoft\\.Edge",
                 "^com\\.microsoft\\.edgemac",
@@ -1446,6 +2511,7 @@
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^org\\.mozilla\\.firefox$",
+                "^org\\.mozilla\\.firefoxdeveloperedition$",
                 "^org\\.mozilla\\.nightly$",
                 "^com\\.microsoft\\.Edge",
                 "^com\\.microsoft\\.edgemac",
@@ -1483,6 +2549,7 @@
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^org\\.mozilla\\.firefox$",
+                "^org\\.mozilla\\.firefoxdeveloperedition$",
                 "^org\\.mozilla\\.nightly$",
                 "^com\\.microsoft\\.Edge",
                 "^com\\.microsoft\\.edgemac",
@@ -1520,6 +2587,7 @@
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^org\\.mozilla\\.firefox$",
+                "^org\\.mozilla\\.firefoxdeveloperedition$",
                 "^org\\.mozilla\\.nightly$",
                 "^com\\.microsoft\\.Edge",
                 "^com\\.microsoft\\.edgemac",
@@ -1543,15 +2611,57 @@
               ]
             }
           },
-          "to": {
-            "key_code": "f2"
-          },
+          "to": [
+            {
+              "key_code": "f2"
+            }
+          ],
           "conditions": [
             {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^com\\.microsoft\\.Excel$"
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "system.use_fkeys_as_standard_function_keys",
+              "value": true
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f2",
+              "modifiers": [
+                "fn"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.Excel$"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "system.use_fkeys_as_standard_function_keys",
+              "value": false
             }
           ]
         },
