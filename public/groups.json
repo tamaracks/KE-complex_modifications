@@ -832,6 +832,10 @@
           "path": "json/fn_arrows.json"
         },
         {
+          "path": "json/fn_lock.json",
+          "extra_description_path": "extra_descriptions/fn_lock.json.html"
+        },
+        {
           "path": "json/fn_plus_numbers_to_function_keys.json"
         },
         {
